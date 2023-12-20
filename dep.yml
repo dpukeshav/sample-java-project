@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: devopsbyrushi/liveproject
+        image: devopsbyrushi/myapplication:v1
         ports:
         - containerPort: 8080
 ---
