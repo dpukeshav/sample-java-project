@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: Liveproject
   labels:
     app: nginx-app
 spec:
@@ -18,13 +18,13 @@ spec:
       - name: nginx-container
         image: devopsbyrushi/myapplication:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: my-service-Liveproject
   labels:
     app: nginx-app
 spec:
@@ -32,7 +32,6 @@ spec:
     app: nginx-app
   type: LoadBalancer
   ports:
-    - protocol: TCP
+    - nodePort: 31111
       port: 80
-      targetPort: 8080
-
+      targetPort: 80
